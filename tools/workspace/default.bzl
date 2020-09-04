@@ -66,6 +66,12 @@ load("//tools/workspace/xorgproto:repository.bzl", "xorgproto_repository")
 load("//tools/workspace/xtrans:repository.bzl", "xtrans_repository")
 load("//tools/workspace/zlib:repository.bzl", "zlib_repository")
 load("//tools/workspace/zstd:repository.bzl", "zstd_repository")
+load("//tools/workspace/yaml-cpp:repository.bzl", "yaml_cpp_repository")
+load("//tools/workspace/paho-mqtt-c:repository.bzl", "paho_mqtt_c_repository")
+load("//tools/workspace/paho-mqtt-cpp:repository.bzl", "paho_mqtt_cpp_repository")
+load("//tools/workspace/libtorch:repository.bzl", "libtorch_repository")
+load("//tools/workspace/libtorch-cpu:repository.bzl", "libtorch_cpu_repository")
+load("//tools/workspace/libpaddle-cpu:repository.bzl", "libpaddle_cpu_repository")
 
 def get_default_config():
     return {
@@ -177,3 +183,15 @@ def add_default_repositories(excludes = [], config = get_default_config()):
         zlib_repository(name = "zlib")
     if "zstd" not in excludes:
         zstd_repository(name = "zstd")
+    if "yaml-cpp" not in excludes:
+        yaml_cpp_repository(name = "yaml-cpp")
+    if "paho-mqtt-c" not in excludes:
+        paho_mqtt_c_repository(name = "paho-mqtt-c")
+    if "paho-mqtt-cpp" not in excludes:
+        paho_mqtt_cpp_repository(name = "paho-mqtt-cpp")
+    if "libtorch" not in excludes:
+        libtorch_repository(name = "libtorch")
+    if "libtorch-cpu" not in excludes:
+        libtorch_cpu_repository(name = "libtorch-cpu")
+    if "libpaddle-cpu" not in excludes:
+        libpaddle_cpu_repository(name = "libpaddle-cpu")
